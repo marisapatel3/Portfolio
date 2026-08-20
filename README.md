@@ -18,7 +18,7 @@ Introduction to my engineering background, areas of interest, and current career
 
 ### Projects
 
-Showcases selected engineering projects spanning CAD, electrical design, embedded systems, automation, robotics, hardware prototyping, and assistive technology.
+Showcases selected engineering projects spanning CAD, electrical design, embedded systems, automation, robotics, hardware prototyping, and assistive technology. Projects include links to their corresponding GitHub repositories for additional technical details.
 
 ### Experience
 
