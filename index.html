@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Browser tab name -->
+    <title>Marisa Patel</title>
+    <!-- Icon fonts (Boxicons, Tabler) and Google Inter typeface -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Wraps every section/page except the footer -->
+    <div class="main-content">
+        <!-- Header/navigation bar -->
+        <header class="header">
+            <!-- Hamburger menu icon -->
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <!-- Navigation links for each page -->
+            <nav class="nav-bar">
+                <a href="#home" class="active">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#leadership">Leadership</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <!--------------------------------------------------------------------------HOME SECTION----------------------------------------------------------------------------->
+        <!-- Layout of page: name + intro paragraph + social icons, a scroll-down button in the corner -->
+        <section class="home" id="home">
+            <div class="home-content">
+                <!-- Eyebrow text -->
+                <span class="home-eyebrow">Electrical Engineering Graduate</span>
+                <!-- Main heading -->
+                <h1>Marisa Patel</h1>
+                <!-- Intro text -->
+                <p>Electrical Engineering graduate from McMaster University with experience in hardware, automation, and engineering design. Passionate about electrical design, CAD, circuit design, hardware prototyping, and power engineering. Actively seeking full-time opportunities in electrical design, hardware, and power engineering.</p>
+                <!-- Social icon links: email, LinkedIn, GitHub -->
+                <div class="social-media-contacts">
+                    <a href="mailto:marisap0231@gmail.com" aria-label="Email"><i class='bx bxs-envelope'></i></a>
+                    <a href="https://linkedin.com/in/MarisaPatel03" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://github.com/marisapatel3" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                </div>
+            </div>
+            <!-- Scroll-down button, links to Projects page -->
+            <a href="#projects" class="scroll-indicator" aria-label="Scroll to projects">
+                <span class="scroll-indicator-glow"></span>
+                <i class='bx bx-chevron-down scroll-indicator-icon'></i>
+            </a>
+        </section>
+
+        <!------------------------------------------------------------------------PROJECTS SECTION--------------------------------------------------------------------------->
+        <!-- Layout of page: 2-column grid, one modal per project -->
+        <section class="projects" id="projects">
+            <!-- Eyebrow text -->
+            <span class="section-eyebrow">Applied Engineering</span>
+            <!-- Main heading -->
+            <h2 class="heading">Projects</h2>
+            <!-- Intro subtitle -->
+            <p class="section-subtitle">Collection of projects spanning embedded systems, automation, robotics, hardware prototyping, CAD, assistive technology, and electrical design.</p>
+            <div class="projects-container">
+
+                <!-- Project 1 card: -->
+                <div class="projects-slot">
+                <div class="projects-box">
+                    <!-- Hover hint, tells the viewer there's more to see -->
+                    <span class="project-hover-hint"><i class='bx bx-chevron-down'></i></span>
+                    <!-- Project name -->
+                    <div class="project-header">
+                        <h3>Semi-Autonomous Lug Nut Fastening/Unfastening System</h3>
+                        <!-- Meta subtext: project type and year -->
+                        <span class="project-meta">Capstone · 2026</span>
+                    </div>
+                    <div class="project-body">
+                        <!-- Main project description/summary -->
+                        <p class="project-desc">A semi-autonomous robotic system that uses computer vision and a CoreXY gantry to automatically position and drive a motorized drill over a tire's lug nuts for fastening and unfastening.</p>
+                        <!-- Skills/technologies used -->
+                        <div class="project-tags-preview">
+                            <span class="tag tag--sm">Python</span>
+                            <span class="tag tag--sm">OpenCV</span>
+                            <span class="tag tag--sm">MicroPython</span>
+                            <span class="tag tag--sm">Raspberry Pi 4</span>
+                            <span class="tag tag--sm">Raspberry Pi Pico 2</span>
+                            <span class="tag tag--sm">ESP32-CAM</span>
+                            <span class="tag tag--sm">NEMA-17</span>
+                            <span class="tag tag--sm">Buck-Boost Converter</span>
+                            <span class="tag tag--sm">CoreXY</span>
+                            <span class="tag tag--sm">Linear Actuator</span>
+                            <span class="tag tag--sm">Wi-Fi/HTTP</span>
+                            <span class="tag tag--sm">OnShape</span>
+                            <span class="tag tag--sm">3D Printing</span>
+                        </div>
+                        <!-- Project details (after hover) -->
+                        <div class="project-detail">
+                            <p>Uses a Raspberry Pi 4 and ESP32-CAM to run a Python/OpenCV vision pipeline that captures tire hub images, detects bolt faces via contour detection and thresholding, and outputs real-world millimeter coordinates.</p>
+                            <p>A Raspberry Pi Pico 2 programmed in MicroPython receives the coordinates and converts them into synchronized NEMA-17 stepper commands, driving the CoreXY carriage to each bolt position.</p>
+                            <p>A linear actuator extends to engage the drill and a DC motor executes the fastening or unfastening at each CoreXY coordinate.</p>
+                        </div>
+                        <!-- "View Project" button (after hover), opens modal 6 -->
+                        <div class="project-footer">
+                            <button class="projects-button" data-modal-target="#modal6">VIEW PROJECT <span class="btn-arrow">&rsaquo;</span></button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Project 2 card: -->
+                <div class="projects-slot">
+                <div class="projects-box">
+                    <!-- Hover hint, tells the viewer there's more to see -->
+                    <span class="project-hover-hint"><i class='bx bx-chevron-down'></i></span>
+                    <!-- Project name -->
+                    <div class="project-header">
+                        <h3>AEV Autonomous Navigation System</h3>
+                        <!-- Meta subtext: project type and year -->
+                        <span class="project-meta">Robotics · 2025</span>
+                    </div>
+                    <div class="project-body">
+                        <!-- Main project description/summary -->
+                        <p class="project-desc">Autonomous electric vehicle control system built on a Nvidia Jetson Nano running ROS that fuses LiDAR, inertial, and camera data to localize the vehicle in real time and enable both driver assist collision avoidance and fully autonomous navigation.</p>
+                        <!-- Skills/technologies used -->
+                        <div class="project-tags-preview">
+                            <span class="tag tag--sm">Python</span>
+                            <span class="tag tag--sm">C / C++</span>
+                            <span class="tag tag--sm">ROS</span>
+                            <span class="tag tag--sm">Linux</span>
+                            <span class="tag tag--sm">MATLAB</span>
+                            <span class="tag tag--sm">Simulink</span>
+                            <span class="tag tag--sm">SLAM</span>
+                            <span class="tag tag--sm">Nvidia Jetson Nano</span>
+                            <span class="tag tag--sm">LiDAR</span>
+                            <span class="tag tag--sm">RGB-D Camera</span>
+                        </div>
+                        <!-- Project details (after hover) -->
+                        <div class="project-detail">
+                            <p>Nvidia Jetson Nano running ROS coordinated a brushless DC motor controller, LiDAR scanner, inertial measurement unit (IMU), and depth camera, using C++ and Python to command vehicle speed and steering.</p>
+                            <p>Wheel odometry was fused with inertial and LiDAR based scan matching to localize the vehicle, achieving 5cm of positioning accuracy validated against Simultaneous Localization and Mapping (SLAM) generated maps.</p>
+                            <p>Feedback linearizing control and quadratic optimization based navigation algorithms were developed and tested to enable wall following, obstacle avoidance, and automatic reversal out of dead ends.</p>
+                        </div>
+                        <!-- "View Project" button (after hover), opens modal 5 -->
+                        <div class="project-footer">
+                            <button class="projects-button" data-modal-target="#modal5">VIEW PROJECT <span class="btn-arrow">&rsaquo;</span></button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Project 3 card: -->
+                <div class="projects-slot">
+                <div class="projects-box">
+                    <!-- Hover hint, tells the viewer there's more to see -->
+                    <span class="project-hover-hint"><i class='bx bx-chevron-down'></i></span>
+                    <!-- Project name -->
+                    <div class="project-header">
+                        <h3>Spatial 360° Mapping</h3>
+                        <!-- Meta subtext: project type and year -->
+                        <span class="project-meta">Embedded Systems · 2023</span>
+                    </div>
+                    <div class="project-body">
+                        <!-- Main project description/summary -->
+                        <p class="project-desc">An embedded spatial mapping system that uses a Time-of-Flight sensor and stepper motor to capture a 360 degree scan of an indoor environment and render it as a 3D point cloud.</p>
+                        <!-- Skills/technologies used -->
+                        <div class="project-tags-preview">
+                            <span class="tag tag--sm">C / C++</span>
+                            <span class="tag tag--sm">Keil uVision</span>
+                            <span class="tag tag--sm">I2C / UART</span>
+                            <span class="tag tag--sm">Python</span>
+                            <span class="tag tag--sm">Microcontroller</span>
+                        </div>
+                        <!-- Project details (after hover) -->
+                        <div class="project-detail">
+                            <p>Combined a TI MSP432E401Y microcontroller, VL53L1X Time of Flight sensor, and MOT 28BYJ 48 stepper motor to collect distance measurements of a hallway in McMaster's Engineering Technology Building.</p>
+                            <p>Used I2C communication to link the sensor to the microcontroller, with each measurement then relayed to a PC over UART at 115200 baud for processing in Python.</p>
+                            <p>Converted the raw distance and angle readings into xyz coordinates and rendered a full 3D point cloud and mesh visualization of the scanned hallway using the Open3D library.</p>
+                        </div>
+                        <!-- "View Project" button (after hover), opens modal 4 -->
+                        <div class="project-footer">
+                            <button class="projects-button" data-modal-target="#modal4">VIEW PROJECT <span class="btn-arrow">&rsaquo;</span></button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Project 4 card: -->
+                <div class="projects-slot">
+                <div class="projects-box">
+                    <!-- Hover hint, tells the viewer there's more to see -->
+                    <span class="project-hover-hint"><i class='bx bx-chevron-down'></i></span>
+                    <!-- Project name -->
+                    <div class="project-header">
+                        <h3>Mechanical Cutting Device</h3>
+                        <!-- Meta subtext: project type and year -->
+                        <span class="project-meta">Assistive Design · 2022</span>
+                    </div>
+                    <div class="project-body">
+                        <!-- Main project description/summary -->
+                        <p class="project-desc">Ergonomic fold over slicer designed for a client with Ehlers Danlos Syndrome to reduce joint strain and lateral hand movement during food preparation.</p>
+                        <!-- Skills/technologies used -->
+                        <div class="project-tags-preview">
+                            <span class="tag tag--sm">Autodesk Inventor</span>
+                            <span class="tag tag--sm">3D Printing</span>
+                            <span class="tag tag--sm">Woodworking</span>
+                        </div>
+                        <!-- Project details (after hover) -->
+                        <div class="project-detail">
+                            <p>Traditional knife grips concentrate pressure on the carpometacarpal joints, which the design addresses through a flat hand placement with sanded divots that distribute load evenly across the hand.</p>
+                            <p>Rotating the slicer downward onto a cushioned, cotton lined strap replaces the standard cutting motion, with a modular pin and hinge assembly connecting it securely to the cutting board.</p>
+                            <p>Cut food drops directly into a removable drawer through a sliding cutout with a handle built into the cutting board, and all detachable parts are dishwasher safe for cleaning.</p>
+                        </div>
+                        <!-- "View Project" button (after hover), opens modal 3 -->
+                        <div class="project-footer">
+                            <button class="projects-button" data-modal-target="#modal3">VIEW PROJECT <span class="btn-arrow">&rsaquo;</span></button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Project 5 card: -->
+                <div class="projects-slot">
+                <div class="projects-box">
+                    <!-- Hover hint, tells the viewer there's more to see -->
+                    <span class="project-hover-hint"><i class='bx bx-chevron-down'></i></span>
+                    <!-- Project name -->
+                    <div class="project-header">
+                        <h3>Recycling Sorting System</h3>
+                        <!-- Meta subtext: project type and year -->
+                        <span class="project-meta">Robotics · 2022</span>
+                    </div>
+                    <div class="project-body">
+                        <!-- Main project description/summary -->
+                        <p class="project-desc">Sensor-equipped robot that identifies waste by material type and autonomously sorts it into designated bins along a fixed track.</p>
+                        <!-- Skills/technologies used -->
+                        <div class="project-tags-preview">
+                            <span class="tag tag--sm">Python</span>
+                            <span class="tag tag--sm">Autodesk Inventor</span>
+                            <span class="tag tag--sm">3D Printing</span>
+                        </div>
+                        <!-- Project details (after hover) -->
+                        <div class="project-detail">
+                            <p>Ultraviolet, IR, colour, and LDR sensors detect the material type of each piece of waste before the robot transports it along a fixed path to the correct bin.</p>
+                            <p>The hopper's tipping mechanism was modeled in Autodesk Inventor, with a rod connecting a linear actuator to the hopper's baseplate to create the rotation that releases the waste.</p>
+                            <p>Programmed in Quanser Interactive Labs, a robotic arm loads up to three items, capped at a combined weight of 90 grams, onto the hopper, while an IR sensor keeps the robot on path and an ultrasonic sensor positions it at the correct distance from each bin.</p>
+                        </div>
+                        <!-- "View Project" button (after hover), opens modal 2 -->
+                        <div class="project-footer">
+                            <button class="projects-button" data-modal-target="#modal2">VIEW PROJECT <span class="btn-arrow">&rsaquo;</span></button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Project 6 card: -->
+                <div class="projects-slot">
+                <div class="projects-box">
+                    <!-- Hover hint, tells the viewer there's more to see -->
+                    <span class="project-hover-hint"><i class='bx bx-chevron-down'></i></span>
+                    <!-- Project name -->
+                    <div class="project-header">
+                        <h3>Remote Sensing Sterilization System</h3>
+                        <!-- Meta subtext: project type and year -->
+                        <span class="project-meta">Robotics · 2021</span>
+                    </div>
+                    <div class="project-body">
+                        <!-- Main project description/summary -->
+                        <p class="project-desc">Python-programmed robotic arm that autonomously identifies, sorts by size, and deposits sterilization containers into their correct autoclave locations.</p>
+                        <!-- Skills/technologies used -->
+                        <div class="project-tags-preview">
+                            <span class="tag tag--sm">Python</span>
+                            <span class="tag tag--sm">Quanser Interactive Labs</span>
+                            <span class="tag tag--sm">Raspberry Pi</span>
+                        </div>
+                        <!-- Project details (after hover) -->
+                        <div class="project-detail">
+                            <p>Custom autoclave container, modeled in Autodesk Inventor to hold a flat clamp surgical tool, secures the tool in place using a rod and cap mechanism.</p>
+                            <p>Programmed in Python within Quanser Interactive Labs, the robotic arm identifies each of six containers by ID and determines whether it is dropped into a drawer or placed on top of the bin based on its size.</p>
+                            <p>Gripper and drawer action is gated by a sensor emulator reading checked against a threshold of 0.5, ensuring each step in the pickup and dropoff sequence only executes once confirmed.</p>
+                        </div>
+                        <!-- "View Project" button (after hover), opens modal 1 -->
+                        <div class="project-footer">
+                            <button class="projects-button" data-modal-target="#modal1">VIEW PROJECT <span class="btn-arrow">&rsaquo;</span></button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-------------------------------------------------------------------------------EXPERIENCE SECTION--------------------------------------------------------------------------->
+        <!-- Layout of page: cards, stats row, one modal per experience -->
+        <section class="experience" id="experience">
+            <!-- Eyebrow text -->
+            <span class="section-eyebrow">Professional Work</span>
+            <!-- Main heading -->
+            <h2 class="heading">Experience</h2>
+            <!-- Intro subtitle -->
+            <p class="section-subtitle">Hands-on industry experience contributing to projects, solving technical challenges, and collaborating in professional environments.</p>
+            <div class="experience-container">
+
+                <!-- Experience 1 card: -->
+                <div class="experience-box">
+                    <div class="experience-header">
+                        <div>
+                            <!-- Job title and company -->
+                            <h3>Senior Technical Student - Toronto Hydro</h3>
+                            <!-- Meta subtext: experience type and duration -->
+                            <span class="experience-meta">Co-op · Sept 2024 – Aug 2025</span>
+                        </div>
+                        <!-- Department badge -->
+                        <span class="experience-badge">Capital Projects West Department</span>
+                    </div>
+                    <div class="experience-body">
+                        <!-- Main experience description/summary -->
+                        <p class="experience-desc">Supported the Capital Projects West department by performing QA/QC on civil/electrical construction documentation for projects across the GTA, ensuring engineering drawings and records were accurate and complete.</p>
+                        <!-- Experience details -->
+                        <div class="experience-detail">
+                            <p>Performed QA/QC on documentation for 300+ capital projects across the GTA, reviewing pre-construction release and post-construction closeout packages to validate single-line diagrams, IFC drawings, and as-built drawings for accuracy and completeness.</p>
+                            <p>Coordinated with 8+ project managers, 7 contractors, and 3 third-party auditing firms to resolve documentation issues and support pre-construction meetings.</p>
+                            <p>Managed project administration through SAP, ProjectWise, FTP, and Microsoft Excel, processing invoices, releasing material orders, organizing documentation, and tracking project status.</p>
+                        </div>
+                        <!-- Stat row -->
+                        <div class="experience-stats">
+                            <div class="experience-stat"><div class="stat-num">300+</div><div class="stat-label">Projects</div></div>
+                            <div class="experience-stat"><div class="stat-num">140+</div><div class="stat-label">Pre-Con Reviews</div></div>
+                            <div class="experience-stat"><div class="stat-num">160+</div><div class="stat-label">Post-Con Reviews</div></div>
+                        </div>
+                        <div class="experience-footer">
+                            <!-- Skills/technologies used -->
+                            <div class="experience-tags">
+                                <span class="tag tag--sm">Engineering Drawings</span>
+                                <span class="tag tag--sm">QA/QC</span>
+                                <span class="tag tag--sm">Single-Line Diagrams</span>
+                                <span class="tag tag--sm">Microsoft Office</span>
+                                <span class="tag tag--sm">SAP ERP</span>
+                                <span class="tag tag--sm">ProjectWise</span>
+                                <span class="tag tag--sm">FTP</span>
+                            </div>
+                            <!-- "View Details" button, opens modal 1 -->
+                            <button class="experience-button" data-modal-target="#exp-modal1">VIEW DETAILS <span class="btn-arrow">&rsaquo;</span></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-------------------------------------------------------------------------SKILLS SECTION---------------------------------------------------------------------------->
+        <!-- Layout of page: 2x2 grid, 4 category cards, no modals -->
+        <section class="skills" id="skills">
+            <!-- Eyebrow text -->
+            <span class="section-eyebrow">Tools & Technologies</span>
+            <!-- Main heading -->
+            <h2 class="heading">Technical Skills</h2>
+            <!-- Intro subtitle -->
+            <p class="section-subtitle">A range of design, programming, and hardware capabilities developed through coursework, projects, and professional experience.</p>
+            <div class="skills-cards">
+                
+                <!-- Card 1: CAD -->
+                <div class="skills-card">
+                    <div class="skills-card-header">
+                        <i class="ti ti-tools skills-card-icon"></i>
+                        <!-- Skills category label -->
+                        <span class="skills-card-label">CAD</span>
+                    </div>
+                    <!-- Skills -->
+                    <div class="skills-tags">
+                        <span class="tag">AutoCAD</span>
+                        <span class="tag">Autodesk Inventor</span>
+                        <span class="tag">PSpice</span>
+                        <span class="tag">LTspice</span>
+                        <span class="tag">Altair PSIM</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Engineering Tools -->
+                <div class="skills-card">
+                    <div class="skills-card-header">
+                        <i class="ti ti-vector-bezier skills-card-icon"></i>
+                        <!-- Skills category label -->
+                        <span class="skills-card-label">Engineering Tools</span>
+                    </div>
+                    <!-- Skills -->
+                    <div class="skills-tags">
+                        <span class="tag">GitHub</span>
+                        <span class="tag">VS Code</span>
+                        <span class="tag">Eclipse</span>
+                        <span class="tag">Linux</span>
+                        <span class="tag">Keil uVision</span>
+                        <span class="tag">Quartus II</span>
+                        <span class="tag">ProjectWise</span>
+                        <span class="tag">SAP ERP</span>
+                        <span class="tag">Microsoft Office (Excel, Word, Outlook)</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Languages -->
+                <div class="skills-card">
+                    <div class="skills-card-header">
+                        <i class="ti ti-code skills-card-icon"></i>
+                        <!-- Skills category label -->
+                        <span class="skills-card-label">Languages</span>
+                    </div>
+                    <!-- Skills -->
+                    <div class="skills-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">C / C++</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">MATLAB / Simulink</span>
+                        <span class="tag">R</span>
+                        <span class="tag">Verilog</span>
+                        <span class="tag">Assembly</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Hardware -->
+                <div class="skills-card">
+                    <div class="skills-card-header">
+                        <i class="ti ti-cpu skills-card-icon"></i>
+                        <!-- Skills category label -->
+                        <span class="skills-card-label">Hardware</span>
+                    </div>
+                    <!-- Skills -->
+                    <div class="skills-tags">
+                        <span class="tag">Raspberry Pi</span>
+                        <span class="tag">Arduino</span>
+                        <span class="tag">ESP32-CAM</span>
+                        <span class="tag">NVIDIA Jetson</span>
+                        <span class="tag">MSP432</span>
+                        <span class="tag">LiDAR</span>
+                        <span class="tag">Stepper Motors</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-------------------------------------------------------------------------------LEADERSHIP SECTION-------------------------------------------------------------------------->
+        <!-- Layout of page: 2-column grid -->
+        <section class="leadership" id="leadership">
+            <!-- Eyebrow text -->
+            <span class="section-eyebrow">Involvement</span>
+            <!-- Main heading -->
+            <h2 class="heading">Leadership</h2>
+            <!-- Intro subtitle -->
+            <p class="section-subtitle">Developing collaboration, teamwork, and initiative through technical projects, team-based initiatives, and community involvement.</p>
+            <div class="leadership-container">
+
+                <!-- Club 1: McMaster GDSC -->
+                <div class="leadership-box">
+                    <div class="leadership-left">
+                        <!-- Club name -->
+                        <h3>McMaster GDSC</h3>
+                        <!-- Role in club -->
+                        <p class="leadership-role">Incubator/Conferences Team Member</p>
+                        <!-- Duration -->
+                        <p class="leadership-date">Sep 2023 – Aug 2025</p>
+                    </div>
+                    <div class="leadership-right">
+                        <!-- Leadership details -->
+                        <div class="leadership-point">
+                            <p>Coordinated McMaster's first Google Solution Challenge Hackathon 2024 centered on the UN's 17 Sustainable Development Goals, bringing together 200+ participants, guest speakers, and 8+ workshops.</p>
+                        </div>
+                        <div class="leadership-point">
+                            <p>Organized the Mac-a-thon 2025 as part of Google's Build with AI event series, bringing together 230+ participants and 25+ teams for 24+ hours of hacking and 8+ workshops.</p>
+                        </div>
+                        <div class="leadership-point">
+                            <p>Planned and facilitated technical workshops on Google technologies and software development, providing students with hands-on learning opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Club 2: McMaster IEEE -->
+                <div class="leadership-box">
+                    <div class="leadership-left">
+                        <!-- Club name -->
+                        <h3>McMaster IEEE</h3>
+                        <!-- Role in club -->
+                        <p class="leadership-role">Computer Chapter</p>
+                        <!-- Duration -->
+                        <p class="leadership-date">Sep 2023 – Apr 2024</p>
+                    </div>
+                    <div class="leadership-right">
+                        <!-- Leadership details -->
+                        <div class="leadership-point">
+                            <p>Built hardware projects using Arduino, sensors, keypads, and LCDs, developing practical experience in embedded systems and circuit integration.</p>
+                        </div>
+                        <div class="leadership-point">
+                            <p>Organized and participated in Arduino and soldering workshops covering system design and PCB utilization, gaining hands-on electronics assembly experience.</p>
+                        </div>
+                        <div class="leadership-point">
+                            <p>Supported the planning and execution of interactive on-campus engineering events, providing students with opportunities to explore practical technical skills.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!------------------------------------------------------------------------CONTACT SECTION------------------------------------------------------------------------------------->
+        <!-- Layout of page: centered content, status chip, 3-card row of links -->
+        <section class="contact" id="contact">
+            <!-- Eyebrow text -->
+            <span class="section-eyebrow">Get In Touch</span>
+            <!-- Main heading -->
+            <h2 class="heading">Contact</h2>
+            <!-- Intro subtitle -->
+            <p class="section-subtitle">Electrical Engineering graduate from McMaster University, actively seeking full-time roles in electrical design, hardware, and power engineering.</p>
+
+            <!-- Status chip -->
+            <div class="contact-status-chip">
+                <i class="ti ti-briefcase contact-status-icon" aria-hidden="true"></i>
+                <span>Actively Seeking Full-Time Roles</span>
+            </div>
+
+            <!-- 3 contact link cards: email, LinkedIn, GitHub -->
+            <div class="contact-cards">
+                <a href="mailto:marisap0231@gmail.com" class="contact-card">
+                    <i class="ti ti-mail contact-card-icon" aria-hidden="true"></i>
+                    <p class="contact-card-label">Email</p>
+                    <p class="contact-card-value">marisap0231@gmail.com</p>
+                </a>
+                <a href="https://linkedin.com/in/MarisaPatel03" class="contact-card" target="_blank">
+                    <i class="ti ti-brand-linkedin contact-card-icon" aria-hidden="true"></i>
+                    <p class="contact-card-label">LinkedIn</p>
+                    <p class="contact-card-value">/in/MarisaPatel03</p>
+                </a>
+                <a href="https://github.com/marisapatel3" class="contact-card" target="_blank">
+                    <i class="ti ti-brand-github contact-card-icon" aria-hidden="true"></i>
+                    <p class="contact-card-label">GitHub</p>
+                    <p class="contact-card-value">/marisapatel3</p>
+                </a>
+            </div>
+        </section>
+    </div>
+
+        <!------------------------------------------------------------------ALL MODALS: PROJECTS AND EXPERIENCE------------------------------------------------------------------------------>
+                <!-- Project 1: popup modal (#modal6) -->
+                <div class="projects__modal" id="modal6">
+                    <div class="projects__modal-content" role="dialog" aria-modal="true">
+                        <!-- Close modal button -->
+                        <i class='bx bx-x projects__modal-close'></i>
+                        <div class="doc-title-block">
+                            <!-- Project name -->
+                            <h4 class="doc-title">Semi-Autonomous Lug Nut Fastening/Unfastening System</h4>
+                            <!-- Meta subtext: project type and duration -->
+                            <p class="doc-meta">McMaster ELECENG 4OI6 &nbsp;·&nbsp; Sept 2025 – Apr 2026 &nbsp;·&nbsp; Capstone</p>
+                            <div class="doc-topbar">
+                                <!-- Skills/technologies used -->
+                                <div class="doc-tags">
+                                    <span class="tag tag--sm">Python</span>
+                                    <span class="tag tag--sm">OpenCV</span>
+                                    <span class="tag tag--sm">MicroPython</span>
+                                    <span class="tag tag--sm">Raspberry Pi 4</span>
+                                    <span class="tag tag--sm">Raspberry Pi Pico 2</span>
+                                    <span class="tag tag--sm">ESP32-CAM</span>
+                                    <span class="tag tag--sm">NEMA-17</span>
+                                    <span class="tag tag--sm">Buck-Boost Converter</span>
+                                    <span class="tag tag--sm">CoreXY</span>
+                                    <span class="tag tag--sm">Linear Actuator</span>
+                                    <span class="tag tag--sm">Wi-Fi/HTTP</span>
+                                    <span class="tag tag--sm">OnShape</span>
+                                    <span class="tag tag--sm">3D Printing</span>
+                                </div>
+                                <!-- GitHub link button -->
+                                <a href="https://github.com/marisapatel3/Semi-Autonomous-Lug-Nut-Fastening-Unfastening-System" class="github_button" target="_blank">GITHUB <span class="btn-arrow">&rsaquo;</span></a>
+                            </div>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Project Overview</p>
+                            <ul class="doc-bullets">
+                                <li>Addresses the challenges and physical effort involved in manually fastening and unfastening vehicle lug nuts, which is a repetitive task prone to human error and inconsistency in torque application.</li>
+                                <li>Designed to be portable and accessible for everyday users, while being less expensive than industrial tire-changing machines.</li>
+                                <li>The finished system detects lug nut positions using a camera, moves a drill to each position automatically, and fastens/unfastens each bolt with minimal human input.</li>
+                                <li>Main components include a Raspberry Pi 4, ESP32-CAM, Raspberry Pi Pico 2, NEMA-17 stepper motors, a CoreXY gantry, a linear actuator, and a DC drill motor.</li>
+                                <li>Software stack includes Python, OpenCV, and MicroPython.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Engineering Approach</p>
+                            <ul class="doc-bullets">
+                                <li>The system was divided into four modules: Computer Vision and Detection, Mechanical CoreXY, CoreXY Motion Control, and the Drill subsystem.</li>
+                                <li>Computer Vision and Detection:</li>
+                                    <ul>
+                                        <li>The vision module runs on a Raspberry Pi 4, which generates its own Wi-Fi hotspot to connect to the ESP32-CAM. The camera streams live video so the user can position the tire hub before triggering an image capture.</li>
+                                        <li>Bolt detection was implemented in Python using OpenCV. This process converts the image to grayscale, applies Gaussian blur to reduce noise, uses binary thresholding to isolate dark bolt faces, and filters contours by area and circularity to identify each bolt.</li>
+                                        <li>Bolt centroids are calculated using image moments and converted from pixel coordinates to real-world millimeter positions using a pixel-to-mm scaling factor derived from the known bolt diameter.</li>
+                                    </ul>
+                                <li>CoreXY and Motion Control:</li>
+                                    <ul>
+                                        <li>The CoreXY mechanical system consists of two NEMA-17 stepper motors driving GT2 timing belt pulleys along linear rods and LM8LUU bearings, providing low-friction planar motion across the workspace.</li>
+                                        <li>The CoreXY architecture was chosen over a traditional gantry for its reduced moving mass and higher speed, where both NEMA-17 motors are controlled by Adafruit TMC2209 drivers that work simultaneously to produce X and Y motion.</li>
+                                        <li>Coordinates from the Computer Vision and Detection module are written to a text file and passed to a Raspberry Pi Pico 2 programmed in MicroPython, which converts each position into synchronized NEMA-17 stepper motor commands to drive the CoreXY carriage to each bolt.</li>
+                                    </ul>
+                                <li>Drill Actuation:</li>
+                                    <ul>
+                                        <li>Once the carriage reaches each bolt, a linear actuator controlled by a TB6612FNG driver extends in the Z-direction to engage the drill, while a BTS7960 driver controls the DC drill motor for clockwise or counterclockwise rotation to fasten or unfasten the lug nut.</li>
+                                    </ul>
+                                <li>Power is supplied by a 12V LiPo battery with a buck-boost converter stepping the voltage down to 6V for safe operation across components.</li>
+                                <li>Structural components and the drill carriage were designed in Onshape and fabricated using 3D printing.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Outcome</p>
+                            <ul class="doc-bullets">
+                                <li>The system successfully performed end-to-end operation, from image capture and bolt detection to CoreXY positioning and drill actuation with minimal manual intervention between stages.</li>
+                                <li>Bolt detection was validated through iterative testing across different lighting conditions, with detection parameters tuned to reliably identify all lug nut positions in the image.</li>
+                                <li>The CoreXY system demonstrated accurate and repeatable positioning, consistently reaching intended lug nut coordinates at a stable operating speed of approximately 6 mm/s.</li>
+                                <li>The linear actuator and drill motor reliably engaged and disengaged each bolt across repeated test cycles with consistent alignment.</li>
+                                <li>The project validated the feasibility of a low-cost, portable alternative to industrial tire-changing equipment using accessible components and open-source software.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: popup modal (#modal5) -->
+                <div class="projects__modal" id="modal5">
+                    <div class="projects__modal-content" role="dialog" aria-modal="true">
+                        <!-- Close modal button -->
+                        <i class='bx bx-x projects__modal-close'></i>
+                        <div class="doc-title-block">
+                            <!-- Project name -->
+                            <h4 class="doc-title">AEV Autonomous Navigation System</h4>
+                            <!-- Meta subtext: project type and duration -->
+                            <p class="doc-meta">McMaster ELECENG 3EY4 &nbsp;·&nbsp; Jan 2024 – Apr 2025 &nbsp;·&nbsp; Robotics</p>
+                            <div class="doc-topbar">
+                                <!-- Skills/technologies used -->
+                                <div class="doc-tags">
+                                    <span class="tag tag--sm">Python</span>
+                                    <span class="tag tag--sm">C / C++</span>
+                                    <span class="tag tag--sm">ROS</span>
+                                    <span class="tag tag--sm">Linux</span>
+                                    <span class="tag tag--sm">MATLAB</span>
+                                    <span class="tag tag--sm">Simulink</span>
+                                    <span class="tag tag--sm">SLAM</span>
+                                    <span class="tag tag--sm">Nvidia Jetson Nano</span>
+                                    <span class="tag tag--sm">LiDAR</span>
+                                    <span class="tag tag--sm">RGB-D Camera</span>
+                                </div>
+                                <!-- GitHub link button -->
+                                <a href="https://github.com/marisapatel3/AEV-Autonomous-Navigation-System" class="github_button" target="_blank">GITHUB <span class="btn-arrow">&rsaquo;</span></a>
+                            </div>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Project Overview</p>
+                            <ul class="doc-bullets">
+                                <li>The AEV Autonomous Navigation System project centered on a scale model autonomous electric vehicle developed to integrate embedded electronics, sensing, and control software into a functioning self driving platform.</li>
+                                <li>Core hardware included a Nvidia Jetson Nano embedded computer, a VESC motor controller with brushless DC drive and servo steering, a LiDAR laser scanner, an inertial measurement unit, a depth camera, and a joystick for manual driving.</li>
+                                <li>Software was developed in the Robot Operating System framework using Python and C++, alongside MATLAB for supporting analysis, running on Linux across a workspace of custom and modified ROS packages.</li>
+                                <li>The project combined driver assist features with fully autonomous navigation, culminating in a vehicle capable of avoiding collisions, following walls, and navigating open environments without human input.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Engineering Approach</p>
+                            <ul class="doc-bullets">
+                                <li>Configured the operating system and hardware interfaces to reliably recognize the sensor and controller hardware, then built and tested ROS nodes for the LiDAR, camera, and joystick before integrating them into a shared workspace.</li>
+                                <li>Programmed and calibrated the motor controller through firmware and modified driver code to publish and accept motor and servo commands, establishing the relationship between commanded velocity and steering angle and actual vehicle motion using a racecar simulator and bicycle model kinematics.</li>
+                                <li>Derived and implemented odometry equations to estimate vehicle position and heading from wheel speed, fused with inertial orientation data and refined through LiDAR based scan matching, and validated the resulting localization against Simultaneous Localization and Mapping generated maps, achieving 5cm of accuracy.</li>
+                                <li>Developed a driver assist collision avoidance algorithm that applied a repelling force proportional to obstacle proximity from LiDAR scans, blending it with the operator's manual joystick commands to correct velocity and steering in real time.</li>
+                                <li>Designed a self driving wall following controller combining feedback linearization with a proportional derivative feedback law to regulate vehicle distance from corridor walls detected through LiDAR.</li>
+                                <li>Extended the navigation algorithm by formulating and solving a quadratic optimization problem to compute virtual separating line barriers from LiDAR returns, allowing the vehicle to identify the largest open gap ahead, center itself between obstacles, and reverse course automatically when facing a dead end.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Outcome</p>
+                            <ul class="doc-bullets">
+                                <li>Delivered a fully integrated autonomous vehicle system tested in both simulated and physical environments, capable of operator assisted driving, wall following, and optimization based obstacle avoidance.</li>
+                                <li>Demonstrated localization accuracy of 5cm, enabling reliable estimation of the vehicle position relative to its surroundings for both driver assist and autonomous modes.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: popup modal (#modal4) -->
+                <div class="projects__modal" id="modal4">
+                    <div class="projects__modal-content" role="dialog" aria-modal="true">
+                        <!-- Close modal button -->
+                        <i class='bx bx-x projects__modal-close'></i>
+                        <div class="doc-title-block">
+                            <!-- Project name -->
+                            <h4 class="doc-title">Spatial 360° Mapping</h4>
+                            <!-- Meta subtext: project type and duration -->
+                            <p class="doc-meta">McMaster ENGINEER 2DX4 &nbsp;·&nbsp; Jan 2023 – Apr 2023 &nbsp;·&nbsp; Embedded Systems</p>
+                            <div class="doc-topbar">
+                                <!-- Skills/technologies used -->
+                                <div class="doc-tags">
+                                    <span class="tag tag--sm">C / C++</span>
+                                    <span class="tag tag--sm">Keil uVision</span>
+                                    <span class="tag tag--sm">I2C / UART</span>
+                                    <span class="tag tag--sm">Python</span>
+                                    <span class="tag tag--sm">Microcontroller</span>
+                                </div>
+                                <!-- GitHub link button -->
+                                <a href="https://github.com/marisapatel3/Spatial-360-Mapping" class="github_button" target="_blank">GITHUB <span class="btn-arrow">&rsaquo;</span></a>
+                            </div>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Project Overview</p>
+                            <ul class="doc-bullets">
+                                <li>Addresses the need for an accessible, low cost way to capture spatial distance data of an indoor environment and reconstruct it into a usable 3D digital representation.</li>
+                                <li>Designed as a compact, portable scanning tool that can be aimed at a hallway, room, or object and produce an accurate 3D model of its surroundings without expensive lidar equipment.</li>
+                                <li>The finished system rotates a time of flight sensor through a full 360 degree sweep, captures distance readings at each angular step, and outputs a completed 3D point cloud and connected mesh visualization of the scanned space.</li>
+                                <li>Main components include a TI MSP432E401Y microcontroller, a VL53L1X time of flight sensor, a MOT 28BYJ 48 stepper motor with a ULN2003 driver board, and a PC running Python.</li>
+                                <li>Software stack includes embedded C for the microcontroller and Python 3.9 with the math, serial, numpy, and Open3D libraries for data processing and visualization.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Engineering Approach</p>
+                            <ul class="doc-bullets">
+                                <li>The VL53L1X sensor emits a 940nm invisible laser pulse that reflects off the nearest surface, and the sensor measures the travel time of that pulse, multiplies it by the speed of light, and divides the result by two to determine the distance to the object.</li>
+                                <li>I2C communication protocol linked the time of flight sensor to the microcontroller, following the standard two wire serial interface.</li>
+                                <li>The MOT 28BYJ 48 stepper motor, driven through a ULN2003 driver board, rotated the sensor in fixed 22.5 degree increments, completing 16 measurements per full 360 degree rotation.</li>
+                                <li>An onboard pushbutton configured with interrupts controlled the start and stop of each scan, while onboard LEDs provided real time status indication as each measurement was taken.</li>
+                                <li>Once a full rotation completed, the system paused for the user to manually displace the entire setup along the x axis before beginning the next scan, allowing multiple slices to be captured along a hallway.</li>
+                                <li>Completed distance and angle data were sent from the microcontroller to the PC through UART communication at a baud rate of 115200.</li>
+                                <li>Two Python scripts handled the software side, with the first script converting each distance and stepper angle reading into xyz coordinates using trigonometric functions, and the second script reading the resulting xyz file to generate and render the final point cloud and 3D mesh using the Open3D library.</li>
+                                <li>Testing and development were carried out on a laptop running Python 3.9 IDLE, with Keil, an embedded development environment, used to write, build, and load the firmware onto the microcontroller.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Outcome</p>
+                            <ul class="doc-bullets">
+                                <li>The system successfully performed end to end operation, from triggering a scan to capturing, transmitting, and rendering the distance data as a 3D visualization.</li>
+                                <li>A full 3D point cloud and mesh representation of a hallway in McMaster's Engineering Technology Building was generated, confirming the sensor, motor, and processing pipeline worked together accurately across multiple scans.</li>
+                                <li>The conversion pipeline accurately transformed raw distance and angle readings into correct xyz coordinates, validated through manual calculation checks against the Python output.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: popup modal (#modal3) -->
+                <div class="projects__modal" id="modal3">
+                    <div class="projects__modal-content" role="dialog" aria-modal="true">
+                        <!-- Close modal button -->
+                        <i class='bx bx-x projects__modal-close'></i>
+                        <div class="doc-title-block">
+                            <!-- Project name -->
+                            <h4 class="doc-title">Mechanical Cutting Device</h4>
+                            <!-- Meta subtext: project type and duration -->
+                            <p class="doc-meta">McMaster ENGINEER 1P13 &nbsp;·&nbsp; Mar 2022 – Apr 2022 &nbsp;·&nbsp; Assistive Design</p>
+                            <div class="doc-topbar">
+                                <!-- Skills/technologies used -->
+                                <div class="doc-tags">
+                                    <span class="tag tag--sm">Autodesk Inventor</span>
+                                    <span class="tag tag--sm">3D Printing</span>
+                                    <span class="tag tag--sm">Woodworking</span>
+                                </div>
+                                <!-- GitHub link button -->
+                                <a href="https://github.com/marisapatel3/Mechanical-Cutting-Device" class="github_button" target="_blank">GITHUB <span class="btn-arrow">&rsaquo;</span></a>
+                            </div>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Project Overview</p>
+                            <ul class="doc-bullets">
+                                <li>Built for a client living with Ehlers Danlos Syndrome, a connective tissue condition that makes gripping and applying force through the hand joints painful and difficult during everyday tasks such as cutting food.</li>
+                                <li>The problem centered on standard knives, which require bending the fingers around a handle and pushing downward, placing significant strain on the carpometacarpal and metacarpophalangeal joints.</li>
+                                <li>The finished device is a fold over slicer attached to a cutting board, allowing the client to prepare food with a flat hand placement and without the lateral cutting motion required by a standard knife.</li>
+                                <li>Main components include a wooden cutting board with a sliding cutout and drawer, a hinged slicer with a cushioned wrist strap, detachable 3D printed blades, and a modular pin and hinge assembly.</li>
+                                <li>The device was designed to be lightweight, ergonomic, and adaptive, with requirements identified through client interviews and hand measurements early in the design process.</li>
+                                <li>Key design constraints included using food safe materials throughout, keeping the user's hand flat during operation, ensuring the blades were detachable for safe storage, and keeping the overall weight under 5 pounds so the client could carry the device easily.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Engineering Approach</p>
+                            <ul class="doc-bullets">
+                                <li>Several initial prototypes were explored, including a slicer with a handle, a cutting board attachment, and a hand rest, before the strongest features were combined into a single fold over slicer design.</li>
+                                <li>The slicer and cutting board were modeled in Autodesk Inventor using measurements taken directly from the client's hand, then fabricated through a combination of woodworking and 3D printing.</li>
+                                <li>Wood formed the main structural components, PLA filament was 3D printed for the blades and slicer strap for its food safety, durability, and ease of reprinting at home, and metal hinges and nails secured the slicer to the board.</li>
+                                <li>Small divots were sanded into the slicer surface to match the client's hand shape and support his joints, while cotton lining under the strap and rounded edges reduced pressure points and discomfort.</li>
+                                <li>To operate the device, the user secures the cutting board, attaches the slicer through its pin and hinge system, inserts the blade assembly, then slides a hand under the strap and rotates downward as the blades cut the food resting on the board below.</li>
+                                <li>Rubber and plastic no slip stoppers on the underside of the board kept it stable on kitchen counters during use.</li>
+                                <li>All detachable components, including the blades, blade insert, and slicer assembly, are dishwasher safe, meeting the client's need for easy cleaning and maintenance.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Outcome</p>
+                            <ul class="doc-bullets">
+                                <li>The device successfully functioned as a working assistive cutting tool, allowing the client to prepare food using a flat hand position with reduced lateral movement and joint strain compared to a standard knife.</li>
+                                <li>Testing confirmed the design could adaptively cut a range of small food products.</li>
+                                <li>The prototype weighed approximately 2 kilograms, meeting the lightweight objective, and testing indicated a lower estimated injury rate than cutting with a regular knife.</li>
+                                <li>The final deliverable was a fully assembled, functional wooden prototype with a fold over slicer, drawer, and modular hardware, successfully meeting the project's ergonomic, lightweight, and adaptive objectives for the client's daily living needs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: popup modal (#modal2) -->
+                <div class="projects__modal" id="modal2">
+                    <div class="projects__modal-content" role="dialog" aria-modal="true">
+                        <!-- Close modal button -->
+                        <i class='bx bx-x projects__modal-close'></i>
+                        <div class="doc-title-block">
+                            <!-- Project name -->
+                            <h4 class="doc-title">Recycling Sorting System</h4>
+                            <!-- Meta subtext: project type and duration -->
+                            <p class="doc-meta">McMaster ENGINEER 1P13 &nbsp;·&nbsp; Jan 2022 – Mar 2022 &nbsp;·&nbsp; Robotics</p>
+                            <div class="doc-topbar">
+                                <!-- Skills/technologies used -->
+                                <div class="doc-tags">
+                                    <span class="tag tag--sm">Python</span>
+                                    <span class="tag tag--sm">Autodesk Inventor</span>
+                                    <span class="tag tag--sm">3D Printing</span>
+                                </div>
+                                <!-- GitHub link button -->
+                                <a href="https://github.com/marisapatel3/Recycling-Sorting-System" class="github_button" target="_blank">GITHUB <span class="btn-arrow">&rsaquo;</span></a>
+                            </div>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Project Overview</p>
+                            <ul class="doc-bullets">
+                                <li>Addresses the low recycling rate in Canada, where sensor limitations in identifying material type and contamination make large scale sorting difficult, resulting in most plastic waste ending up in landfills.</li>
+                                <li>Designed for recycling facilities seeking a more reliable, automated method of sorting waste by material type.</li>
+                                <li>The finished system is a small scale robot that identifies waste dispensed onto a rotary table, loads it onto a hopper, navigates a fixed track, and deposits it into the correct designated bin.</li>
+                                <li>Main components include a Quanser robot equipped with ultraviolet, IR, colour, and LDR sensors, a robotic arm, a linear actuator driven hopper mechanism, and a Python program built in Quanser Interactive Labs.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Engineering Approach</p>
+                            <ul class="doc-bullets">
+                                <li>The hopper mechanism was designed around a linear actuator, with a rod connecting the actuator to the hopper's baseplate so that forward actuation pushes the rod and rotates the hopper to release the waste.</li>
+                                <li>Pins secured both ends of the rod, with small cylindrical features holding each pin in place to keep the mechanism stable during operation.</li>
+                                <li>The physical mechanism and its components, including the rod, slider, and pins, were modeled in Autodesk Inventor before fabrication.</li>
+                                <li>The full system was programmed in Python within Quanser Interactive Labs, where waste was dispensed at random onto a rotary table and identified by material type.</li>
+                                <li>A robotic arm was programmed to load up to three items onto the hopper, with the combined weight enforced not to exceed 90 grams before each loading cycle.</li>
+                                <li>Bin locations were defined using coordinate values within the virtual environment, which the program referenced to navigate the robot and position it correctly before dumping.</li>
+                                <li>An onboard IR sensor kept the robot following its fixed path, while an ultrasonic sensor measured distance to position the robot accurately in front of each bin prior to disposal.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Outcome</p>
+                            <ul class="doc-bullets">
+                                <li>The system functioned as a fully automated small scale sorting robot, correctly identifying waste by material type before directing it to the appropriate bin.</li>
+                                <li>The robotic arm and hopper mechanism successfully loaded, transported, and released waste into its designated bin within the enforced weight limit.</li>
+                                <li>The project illustrated a viable small scale model for automated sorting, supporting the broader goal of increasing recycling efficiency at facilities limited by manual sorting capacity.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: popup modal (#modal1) -->
+                <div class="projects__modal" id="modal1">
+                    <div class="projects__modal-content" role="dialog" aria-modal="true">
+                        <!-- Close modal button -->
+                        <i class='bx bx-x projects__modal-close'></i>
+                        <div class="doc-title-block">
+                            <!-- Project name -->
+                            <h4 class="doc-title">Remote Sensing Sterilization System</h4>
+                            <!-- Meta subtext: project type and duration -->
+                            <p class="doc-meta">McMaster ENGINEER 1P13 &nbsp;·&nbsp; Nov 2021 – Dec 2021 &nbsp;·&nbsp; Robotics</p>
+                            <div class="doc-topbar">
+                                <!-- Skills/technologies used -->
+                                <div class="doc-tags">
+                                    <span class="tag tag--sm">Python</span>
+                                    <span class="tag tag--sm">Quanser Interactive Labs</span>
+                                    <span class="tag tag--sm">Raspberry Pi</span>
+                                </div>
+                                <!-- GitHub link button -->
+                                <a href="https://github.com/marisapatel3/Remote-Sensing-Sterilization-System" class="github_button" target="_blank">GITHUB <span class="btn-arrow">&rsaquo;</span></a>
+                            </div>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Project Overview</p>
+                            <ul class="doc-bullets">
+                                <li>Addresses the need for a system that can safely transfer surgical tool containers into an autoclave for sterilization without manual handling.</li>
+                                <li>Designed for use in a simulated sterilization workflow, where containers of varying sizes need to be delivered to the correct designated location.</li>
+                                <li>The finished system is a robotic arm that identifies each container, transports it to its assigned bin, and either opens a drawer or places the container on top depending on its size.</li>
+                                <li>Main components include a Quanser robotic arm, a Python program built in Quanser Interactive Labs, and a container designed to hold a flat clamp tool, featuring a rod and cap securing mechanism and ventilation windows to support sterilization.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Engineering Approach</p>
+                            <ul class="doc-bullets">
+                                <li>The program was structured into modular functions, each responsible for a distinct task including bin location lookup, end effector movement, gripper control, and drawer operation.</li>
+                                <li>Each of the six container IDs, split evenly between small and large containers, was mapped to a specific coordinate location identified through trial and error in the virtual environment.</li>
+                                <li>The arm was programmed to return to a home position before moving to any specified location, ensuring consistent motion between pickups and drop offs.</li>
+                                <li>Separate logic controlled the gripper and the appropriate autoclave drawer based on a flag value, with the drawer only triggered for large containers.</li>
+                                <li>Every action taken by the arm was gated by a sensor emulator reading, checked against a threshold of 0.5, before the corresponding step was allowed to execute.</li>
+                                <li>The overall program tied these components together, randomly selecting a container, moving to pick it up, closing the gripper, navigating to the correct bin, opening the drawer if needed, and releasing the container before returning home.</li>
+                                <li>This cycle repeated until all six containers, spawned in random order without repetition, had been successfully transferred.</li>       
+                            </ul>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Outcome</p>
+                            <ul class="doc-bullets">
+                                <li>The program successfully identified, transferred, and deposited all six containers into their correct autoclave locations without manual intervention.</li>
+                                <li>Large containers correctly triggered their designated drawer to open, while small containers were consistently placed on top of the bin.</li>
+                                <li>The final deliverable was a fully functional robotic arm program paired with a container design that held the flat clamp securely and stably throughout the transfer and sterilization process.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 1: popup modal (#exp-modal1) -->
+                <div class="experience__modal" id="exp-modal1">
+                    <div class="experience__modal-content" role="dialog" aria-modal="true">
+                        <!-- Close modal button -->
+                        <i class='bx bx-x experience__modal-close'></i>
+                        <div class="doc-title-block">
+                            <!-- Job title and company-->
+                            <h4 class="doc-title">Senior Technical Student Capital Projects - Toronto Hydro</h4>
+                            <!-- Meta subtext: experience type and duration -->
+                            <p class="doc-meta">Co-op · Sept 2024 – Aug 2025</p>
+                            <div class="doc-topbar">
+                                <!-- Skills/technologies used -->
+                                <div class="doc-tags">
+                                    <span class="tag tag--sm">Engineering Drawings</span>
+                                    <span class="tag tag--sm">QA/QC</span>
+                                    <span class="tag tag--sm">Single-Line Diagrams</span>
+                                    <span class="tag tag--sm">Microsoft Office</span>
+                                    <span class="tag tag--sm">SAP ERP</span>
+                                    <span class="tag tag--sm">ProjectWise</span>
+                                    <span class="tag tag--sm">FTP</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Role Overview</p>
+                            <ul class="doc-bullets">
+                                <li>Supported a team of project managers, engineers, and technicians on externally designed capital construction projects across the GTA.</li>
+                                <li>Projects primarily involved installing, removing, or replacing poles, switches, and transformers, along with road restoration tied to those projects.</li>
+                                <li>Functioned as a quality checkpoint between the engineering design phase and physical construction, making sure every project had complete, accurate documentation before construction and after completion.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Responsibilities & Contributions</p>
+                            <ul class="doc-bullets">
+                                <li>Reviewed and validated construction documentation packages at two stages of a project's lifecycle: before construction began and after it was completed.</li>
+                                <li>Completed 140+ pre-construction document reviews and 160+ post-construction document reviews over the term.</li>
+                                <li>Cross-checked the civil/electrical design IFC drawings and as-built drawings against equipment changeout forms, asset checklists, and material lists to confirm the correct assets were installed, removed, or replaced.</li>
+                                <li>Interacted daily with contractors to request clarifications, drawing corrections, and resolve outstanding documentation.</li>
+                                <li>Verified and released material orders through SAP ahead of construction start dates.</li>
+                                <li>Helped organize pre-construction meetings between contractors, auditors, and Toronto Hydro team members.</li>
+                                <li>Sent daily crew rosters to the department showing which contractors were working on certain projects each day.</li>
+                                <li>Managed, organized, and circulated project documentation through ProjectWise and FTP.</li>
+                                <li>Processed invoices and posted billing for completed work through SAP, ensuring costs were recorded accurately against the correct project and cost center.</li>
+                                <li>Tracked project status and extracted large volumes of project data into Microsoft Excel to identify trends.</li>
+                                <li>Updated internal company databases with current project details, including assigned contractors, responsible managers, and key dates.</li>
+                                <li>Participated in site visits with a manager to verify project conditions and perform safety inspections to ensure compliance with Toronto Hydro's safety regulations.</li>
+                                <li>Supported recurring internal department meetings (weekly team meetings and monthly cross-functional meetings).</li>
+                            </ul>
+                        </div>
+                        <div class="doc-rule"></div>
+                        <div class="doc-section">
+                            <p class="doc-label">Engineering Experience</p>
+                            <ul class="doc-bullets">
+                                <li>Gained direct exposure to the construction phase of the electrical distribution project lifecycle, specifically the handoff points between design, construction, and closeout.</li>
+                                <li>Learned to read and evaluate IFC drawings, single-line diagrams, and as-built drawings, including what makes a drawing set complete and ready for construction.</li>
+                                <li>Developed an understanding of engineering sign-off practices, revision control, and multi-discipline approval processes (civil and electrical) on a single project, sharpening attention to detail and document control across high volumes of technical paperwork.</li>
+                                <li>Built a clearer picture of how a large engineering organization tracks cost, materials, and documentation in parallel across hundreds of active projects, gaining experience collaborating across internal teams with different priorities and timelines.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+    <!-------------------------------------------------------------------------FOOTER SECTION----------------------------------------------------------------------------------------->
+    <!-- Layout of footer: social icons, back-to-top link, copyright line -->
+    <footer class="footer">
+        <div class="footer-main">
+            <!-- Social icon links: email, LinkedIn, GitHub -->
+            <div class="social-media-contacts-footer">
+                <a href="mailto:marisap0231@gmail.com" aria-label="Email"><i class='bx bxs-envelope'></i></a>
+                <a href="https://linkedin.com/in/MarisaPatel03" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/marisapatel3" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            </div>
+        </div>
+        <!-- Back-to-top button, links to Home page -->
+        <a href="#home" class="footer-icon-up" aria-label="Back to top"><i class='bx bxs-chevron-up'></i></a>
+        <!-- Copyright text -->
+        <div class="footer-copyright">
+            <p>&copy; 2024-2026 Marisa Patel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scrollreveal library -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- JavaScript script -->
+    <script src="script.js"></script>
+
+</body>
+</html>

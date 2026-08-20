@@ -1,0 +1,1387 @@
+/*-------------------------------------IMPORT-----------------------------------*/
+/* Loads the Inter font family from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/*---------------------------------ROOT VARIABLES-------------------------------*/
+/* Color palette, shadows, and easing values used throughout the website */
+:root {
+    --background-color: #171619;        
+    --second-background-color: #222024;
+    --button-background: rgba(255, 255, 255, 0.09);
+    --text-color: #F5F1F3;              
+    --text-muted: #A9A3A8;              
+    --accent: #9A6B6B;      
+    --accent-rgb: 154, 107, 107;      
+    --accent-light: #C79B9B;            
+    --accent-dim: rgba(154, 107, 107, 0.14);
+    --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.35);
+    --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.5);
+    --ease: cubic-bezier(.4,0,.2,1);
+}
+
+/*----------------------------------GLOBAL STYLES-------------------------------*/
+/* Resets default browser spacing and styling on all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+    text-decoration: none;    
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;  
+    font-family: 'Inter', sans-serif;
+}
+
+/* Base font size for rem calculations, prevents horizontal scroll, reserve scrollbar space so it doesn't cause a layout jump */
+html { 
+    font-size: 62.5%; 
+    overflow-x: hidden; 
+    scrollbar-gutter: stable; 
+}
+
+/* Site-wide background and text color */
+body { 
+    background: var(--background-color); 
+    color: var(--text-color); 
+}
+
+/* Locks page scroll behind an open modal: toggled by openModal()/closeModal() in Javascript */
+html.modal-open { overflow: hidden; }
+
+/* Thin custom scrollbar for the whole website */
+::-webkit-scrollbar { width: 0.4rem; }
+::-webkit-scrollbar-track { background-color: var(--background-color); }
+::-webkit-scrollbar-thumb { 
+    background-color: rgba(var(--accent-rgb), 0.4); 
+    border-radius: 2px; 
+}
+
+/* Default hidden state for sections before scroll-reveal animates them in */
+section {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+/* Visible state applied once a section scrolls into view */
+section.section-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Home section is visible immediately, skips the scroll-reveal animation */
+section.home {
+    opacity: 1;
+    transform: none;
+}
+
+/*-------------------------------------HEADER-----------------------------------*/
+/* Fixed nav bar pinned to the top of the page/screen */
+.header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: transparent;
+    display: flex;
+    justify-content: flex-end;  
+    align-items: center;
+    z-index: 100;               
+    transition: background 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+/* Solid blurred background applied once the page is scrolled */
+.header.sticky {
+    background: rgba(23, 22, 25, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); 
+}
+
+/* Navigation links text styling */
+.nav-bar a {
+    font-size: 1.1rem;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-left: 3.6rem;   
+    transition: color 0.3s ease;
+}
+
+/* Navigation link on hover */
+.nav-bar a:hover { color: var(--text-color); }
+
+/* Highlighting the navigation link for the current section being viewed */
+.nav-bar a.active { color: var(--accent); }
+
+/* Hamburger icon, hidden until mobile breakpoint */
+#menu-icon {
+    font-size: 2.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+/*--------------------------------------HOME------------------------------------*/
+/* Full-height hero section layout */
+.home {
+    min-height: 100vh;
+    padding: 14rem 9% 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   
+    align-items: flex-start;   
+    position: relative;        
+    background-color: var(--background-color);
+}
+
+/* Small accent label (eyebrow text) above the hero heading */
+.home-eyebrow {
+    display: inline-block;
+    font-size: 1.15rem;
+    letter-spacing: 0.28rem;   
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 2rem;
+}
+
+/* Large hero name heading */
+.home-content h1 {
+    font-size: 9rem;
+    font-weight: 400;
+    line-height: 1.05;         
+    letter-spacing: -0.3rem;   
+    color: var(--text-color);
+    margin-bottom: 3rem;
+}
+
+/* Hero intro text */
+.home-content p {
+    font-size: 1.6rem;
+    line-height: 1.75;
+    font-weight: 400;
+    color: var(--text-muted);
+    max-width: 90rem;          
+    letter-spacing: 0.01rem;
+}
+
+/* Row layout for social icons */
+.social-media-contacts {
+    display: flex;
+    align-items: center;
+    gap: 2rem;                 
+    margin: 3.5rem 0;
+}
+
+/* Individual social icon styling */
+.social-media-contacts a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--text-muted);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Lift and change colour of social icon on hover */
+.social-media-contacts a:hover {
+    color: var(--text-color);
+    transform: translateY(-2px);
+}
+
+/* Positions the scroll-down button in the corner of the page */
+.scroll-indicator {
+    position: absolute;
+    bottom: 4rem;
+    right: 9%;
+    width: 5.6rem;
+    height: 5.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* Glowing halo behind the scroll-down icon */
+.scroll-indicator-glow {
+    position: absolute;
+    inset: 0;                 
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    opacity: 0.28;
+    filter: blur(6px);         
+    animation: halo-breathe 2.6s ease-in-out infinite;
+    transition: opacity 0.3s ease;
+}
+
+/* Chevron icon sitting on top of the glow */
+.scroll-indicator-icon {
+    position: relative;
+    z-index: 1;               
+    font-size: 2rem;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+/* Icon colour changes and glow on hover */
+.scroll-indicator:hover .scroll-indicator-icon { color: var(--text-color); }
+.scroll-indicator:hover .scroll-indicator-glow { opacity: 0.45; }
+
+/* Pulsing scale/opacity animation for the glow */
+@keyframes halo-breathe {
+    0%, 100% { transform: scale(0.75); opacity: 0.18; }
+    50% { transform: scale(1.2); opacity: 0.4; }
+}
+
+/*--------------------------------SHARED COMPONENTS-----------------------------*/
+/* Pill-shaped tag style used for skills and technologies */
+.tag {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(255, 255, 255, 0.04);  
+    border-radius: 10rem;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    transition: background 0.25s var(--ease), color 0.25s var(--ease), transform 0.2s var(--ease);
+    cursor: default;           
+    letter-spacing: 0.02rem;
+}
+
+/* Tag changes colour on hover */
+.tag:hover {
+    background: var(--accent-dim);
+    color: var(--accent-light);
+    transform: translateY(-1px);
+}
+
+/* Smaller tag used in project/experience cards */
+.tag--sm { 
+    padding: 0.3rem 0.85rem; 
+    font-size: 1rem; 
+}
+
+/* Small accent label above each section heading */
+.section-eyebrow {
+    display: inline-block;
+    font-size: 1.05rem;
+    letter-spacing: 0.26rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1rem;       
+}
+
+/* Main section heading style (Projects, Experience, etc.) */
+.heading {
+    text-align: left;
+    font-size: 3.4rem;
+    font-weight: 500;
+    letter-spacing: -0.03rem;
+    margin-bottom: 0.9rem;
+    line-height: 1.15;
+    color: var(--text-color);
+}
+
+/* Subtitle text below each section heading */
+.section-subtitle {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 4.5rem;     
+    max-width: 70rem;          
+    letter-spacing: 0.01rem;
+}
+
+/*-------------------------------------PROJECTS---------------------------------*/
+/* Projects section container */
+.projects {
+    min-height: 100vh;
+    padding: 10rem 9% 10rem;
+    background-color: var(--second-background-color);
+}
+
+/* Two-column grid holding all project slots */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Wrapper that reserves grid space for each expanding project card */
+.projects-slot { position: relative; }
+
+/* Project card, absolutely positioned so it can expand over the others nearby */
+.projects-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--background-color);
+    border-radius: 1.2rem;
+    overflow: hidden;           
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.4s var(--ease), height 0.4s var(--ease);
+    box-shadow: var(--shadow-sm);
+    z-index: 1;
+    height: 100%;                
+}
+
+/* Expand card height and raise it above others when hovering */
+.projects-slot:hover .projects-box {
+    height: auto;
+    min-height: 100%;
+    box-shadow: var(--shadow-lg);
+    z-index: 10;
+    overflow: visible;           
+}
+
+/* Padding around the project title and meta */
+.project-header { padding: 2rem 2.2rem 1.2rem; }
+
+/* Project title styling */
+.project-header h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01rem;
+}
+
+/* Project type/date label styling */
+.project-meta {
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+/* Layout for description, tags, and hover-only detail content */
+.project-body {
+    padding: 0 2.2rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;                    
+    gap: 1.1rem;                
+}
+
+/* Project description text */
+.project-desc {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.6;
+    letter-spacing: 0.01rem;
+}
+
+/* Wraps the skills tags shown before hovering */
+.project-tags-preview { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 0.5rem; 
+}
+
+/* "+" hover hint shown in the card corner */
+.project-hover-hint {
+    position: absolute;
+    top: 1.4rem;
+    right: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem; 
+    padding: 0.5rem 0.9rem;
+    background: rgba(255,255,255,0.06);
+    border-radius: 10rem;
+    font-size: 1rem;
+    color: var(--text-muted);
+    opacity: 0.85;
+    transition: opacity 0.25s var(--ease);
+    pointer-events: none;        
+}
+
+/* Fade out the "+" hover hint once the card is hovered */
+.projects-slot:hover .project-hover-hint { opacity: 0; }
+
+/* Extra detail bullet points, collapsed and hidden by default */
+.project-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    opacity: 0;
+    max-height: 0;                
+    overflow: hidden;
+    transition: opacity 0.3s var(--ease) 0.1s, max-height 0.4s var(--ease); 
+}
+
+/* Reveals detail bullet points when hover */
+.projects-slot:hover .project-detail {
+    opacity: 1;
+    max-height: 300px;            
+}
+
+/* Detail bullet point text with left accent border */
+.project-detail p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: rgba(166, 160, 159, 0.75);
+    line-height: 1.55;
+    padding-left: 1rem;
+    border-left: 1px solid rgba(var(--accent-rgb), 0.25);  
+}
+
+/* Footer with tags/button, collapsed and hidden by default */
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.2rem;
+    margin-top: 0;
+    padding-top: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s var(--ease) 0.1s, max-height 0.4s var(--ease), padding-top 0.4s var(--ease);
+}
+
+/* Reveals footer on hover */
+.projects-slot:hover .project-footer {
+    opacity: 1;
+    max-height: 60px;
+    padding-top: 0.8rem;
+}
+
+/* "View Project" button style */
+.projects-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    padding: 0.7rem 1.6rem;
+    background: var(--button-background);
+    border-radius: 10rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+    white-space: nowrap;        
+    flex-shrink: 0;              
+    font-family: 'Inter', sans-serif;
+    transition: background 0.3s var(--ease), transform 0.2s var(--ease), box-shadow 0.3s var(--ease);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+    
+}
+
+/* Lift and change colour of button on hover */
+.projects-button:hover {
+    background: rgba(255, 255, 255, 0.16);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.22);
+    text-decoration: none;
+}
+
+/* Arrow icon inside the button */
+.projects-button .btn-arrow {
+    display: inline-block;
+    transition: transform 0.25s var(--ease);
+}
+
+/* Shifts arrow right on hover */
+.projects-button:hover .btn-arrow { transform: translateX(3px); }
+
+/* Full-screen darkened overlay for the project modal, hidden by default */
+.projects__modal {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    top: 0; left: 0; right: 0; bottom: 0;
+    padding: 2rem;
+    z-index: 1000;               
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(8px);  
+    -webkit-backdrop-filter: blur(8px);
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+/* Scrollable modal content box */
+.projects__modal-content {
+    position: relative;
+    background-color: #2a2727;
+    padding: 4.5rem 5rem;
+    border-radius: 0.8rem;
+    max-height: 85vh;            
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    max-width: 72rem;
+    width: 100%;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Close icon positioned in the modal corner */
+.projects__modal-close {
+    position: absolute;
+    cursor: pointer;
+    color: var(--text-muted);
+    top: 2rem; right: 2rem;
+    font-size: 2.2rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Rotate and change colour of close icon on hover */
+.projects__modal-close:hover { 
+    color: var(--text-color); 
+    transform: rotate(90deg); 
+}
+
+/* Blur heading and cards while a modal is open */
+.projects.blur .heading,
+.projects.blur .projects-box { filter: blur(5px); }
+
+/*------------------------------------EXPERIENCE--------------------------------*/
+/* Experience section container */
+.experience {
+    min-height: 100vh;
+    padding: 10rem 9% 10rem;
+    background-color: var(--background-color);
+}
+
+/* Blur heading and card while a modal is open */
+.experience.blur .heading,
+.experience.blur .experience-box { filter: blur(5px); }
+
+/* Wrapper for the experience card */
+.experience-container { margin-bottom: 2rem; }
+
+/* Main experience card styling */
+.experience-box {
+    background: var(--second-background-color);
+    border-radius: 1.4rem;
+    padding: 3.2rem;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.3s var(--ease);
+}
+
+/* Deepens shadow on hover */
+.experience-box:hover { box-shadow: var(--shadow-md); }
+
+/* Title/duration on the left, department badge on the right */
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;             
+    margin-bottom: 1.6rem;
+}
+
+/* Job title styling */
+.experience-header h3 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01rem;
+}
+
+/* Employment type/duration label styling */
+.experience-meta {
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+/* Department badge */
+.experience-badge {
+    background: var(--button-background);
+    color: var(--text-color);
+    padding: 0.5rem 1.2rem;
+    border-radius: 10rem;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06rem;
+    font-weight: 600;
+    white-space: nowrap;         
+}
+
+/* Stacks the description, stats, and footer vertically */
+.experience-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+/* Main experience description/summary */
+.experience-desc {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.65;
+    letter-spacing: 0.01rem;
+    max-width: 100%;
+}
+
+/* Three-column grid for the stat row */
+.experience-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  
+    gap: 1.2rem;
+    max-width: 60rem;
+}
+
+/* Individual stat box */
+.experience-stat {
+    background: var(--background-color);
+    border-radius: 0.9rem;
+    padding: 1.4rem 1.6rem;
+}
+
+/* Large stat number */
+.experience-stat .stat-num {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--accent-light);
+}
+
+/* Text label under each stat number */
+.experience-stat .stat-label {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04rem;
+}
+
+/* Stacks the detail bullet points */
+.experience-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    max-width: 100%;
+}
+
+/* Detail bullet point text with left accent border */
+.experience-detail p {
+    font-size: 1.35rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.65;
+    padding-left: 1.2rem;
+    border-left: 1.5px solid rgba(var(--accent-rgb), 0.25);
+}
+
+/*Skills tags on the left, "View Details" button on the right */
+.experience-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.2rem;
+    margin-top: 0.4rem;
+}
+
+/* Wraps the skills tags */
+.experience-tags { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 0.5rem; 
+}
+
+/* "View Details" button style */
+.experience-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    padding: 0.7rem 1.6rem;
+    background: var(--button-background);
+    border-radius: 10rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.3s var(--ease), transform 0.2s var(--ease), box-shadow 0.3s var(--ease);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+/* Lift and change colour of button on hover */
+.experience-button:hover {
+    background: rgba(255, 255, 255, 0.16);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.22);
+    text-decoration: none;
+}
+
+/* Arrow icon inside the button */
+.experience-button .btn-arrow {
+    display: inline-block;
+    transition: transform 0.25s var(--ease);
+}
+
+/* Shift arrow right on hover */
+.experience-button:hover .btn-arrow { transform: translateX(3px); }
+
+/* Full-screen darkened overlay for the experience modal, hidden by default */
+.experience__modal {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    top: 0; left: 0; right: 0; bottom: 0;
+    padding: 2rem;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+/* Scrollable modal content box */
+.experience__modal-content {
+    position: relative;
+    background-color: #2a2727;
+    padding: 4.5rem 5rem;
+    border-radius: 0.8rem;
+    max-height: 85vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    max-width: 72rem;
+    width: 100%;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Close (X) icon positioned in the modal corner */
+.experience__modal-close {
+    position: absolute;
+    cursor: pointer;
+    color: var(--text-muted);
+    top: 2rem; right: 2rem;
+    font-size: 2.2rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Rotate and change colour of close icon on hover */
+.experience__modal-close:hover { 
+    color: var(--text-color); 
+    transform: rotate(90deg); 
+}
+
+/*------------------------------MODAL DOCUMENT CONTENT--------------------------*/
+/* Shared styles used inside both .projects__modal and .experience__modal */
+/* Makes a modal visible when this class is toggled on */
+.active-modal { 
+    opacity: 1; 
+    visibility: visible; 
+}
+
+/* Spacing below the modal title block */
+.doc-title-block { margin-bottom: 3rem; }
+
+/* Modal heading text */
+.doc-title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--text-color);
+    line-height: 1.25;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02rem;
+}
+
+/* Course/company and date line under the modal title */
+.doc-meta {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    margin-bottom: 1.8rem;
+    letter-spacing: 0.01rem;
+}
+
+/* Row holding the skills tag list and GitHub button */
+.doc-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+/* Wraps the skills tags in the modal */
+.doc-tags { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 0.5rem; 
+}
+
+/* Thin divider line between modal sections */
+.doc-rule {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+    margin: 0 0 2.8rem 0;
+}
+
+/* Spacing between modal sections, removed after the last one */
+.doc-section { margin-bottom: 2.8rem; }
+.doc-section:last-child { margin-bottom: 0; } 
+
+/* Section label (e.g. "Project Overview") styling */
+.doc-label {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.22rem;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.4rem;
+}
+
+/* Bullet list styling for modal content */
+.doc-bullets {
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin: 0;
+}
+
+/* Individual bullet point text */
+.doc-bullets li {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    letter-spacing: 0.01rem;
+}
+
+/* Nested sub-bullet list styling */
+.doc-bullets ul {
+    list-style-type: circle;
+    padding-left: 2rem;
+    margin-top: 0.8rem;
+}
+
+/* GitHub link button style */
+.github_button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.6rem;
+    background: var(--button-background);
+    border-radius: 10rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.3s var(--ease), transform 0.2s var(--ease), box-shadow 0.3s var(--ease);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+/* Lift and change colour of button on hover */
+.github_button:hover {
+    background: rgba(255, 255, 255, 0.16);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.22);
+    text-decoration: none;
+}
+
+/* Arrow icon inside the button */
+.github_button .btn-arrow {
+    display: inline-block;
+    transition: transform 0.25s var(--ease);
+}
+
+/* Shift arrow right on hover */
+.github_button:hover .btn-arrow { transform: translateX(3px); }
+
+/*------------------------------------LEADERSHIP--------------------------------*/
+/* Leadership section container */
+.leadership {
+    min-height: 100vh;
+    padding: 10rem 9% 10rem;
+    background-color: var(--background-color);
+}
+
+/* Blur heading and cards while a modal is open */
+.leadership.blur .heading,
+.leadership.blur .leadership-box { filter: blur(5px); }
+
+/* Two-column grid for the leadership cards */
+.leadership-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+}
+
+/* Individual card styling */
+.leadership-box {
+    display: block;
+    background: var(--second-background-color);
+    border-radius: 1.2rem;
+    padding: 2.4rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+/* Lift card and deepen shadow on hover */
+.leadership-box:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Club name, role, and date column */
+.leadership-left {
+    padding: 0 0 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+/* Club name styling */
+.leadership-left h3 { 
+    font-size: 1.5rem; 
+    font-weight: 600; 
+    color: var(--text-color); 
+    line-height: 1.3; 
+}
+
+/* Role title styling */
+.leadership-role {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--accent-light);
+}
+
+/* Duration styling */
+.leadership-date {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+/* Stacks the bullet points */
+.leadership-right {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Layout for a single bullet point */
+.leadership-point { 
+    display: flex; 
+    align-items: flex-start; 
+    gap: 0.9rem; 
+}
+
+/* Bullet point text with left accent border */
+.leadership-point p {
+    position: relative;
+    padding-left: 1rem;
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.6;
+    letter-spacing: 0.01rem;
+    border-left: 2px solid var(--accent-dim);
+}
+
+/*-------------------------------------SKILLS-----------------------------------*/
+/* Skills section container */
+.skills {
+    min-height: 100vh;
+    padding: 10rem 9% 10rem;
+    background-color: var(--second-background-color);
+}
+
+/* Two-column grid for the skill category cards */
+.skills-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* Individual skill category card */
+.skills-card {
+    background: var(--background-color);
+    border-radius: 1.2rem;
+    overflow: hidden;
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+/* Lift card and deepen shadow on hover */
+.skills-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Icon and label row at the top of each card */
+.skills-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.7rem 2.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);   
+}
+
+/* Category icon styling */
+.skills-card-icon { 
+    font-size: 1.7rem; 
+    color: var(--accent); 
+    line-height: 1; 
+    opacity: 0.8; 
+}
+
+/* Category label styling */
+.skills-card-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+/* Wraps the skills tags inside each card */
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding: 1.7rem 2.1rem;
+}
+
+/*-------------------------------------CONTACT----------------------------------*/
+/* Contact section container */
+.contact {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    padding: 10rem 9% 10rem;
+    background-color: var(--second-background-color);
+    text-align: center;
+}
+
+/* Center the contact heading */
+.contact h2 { text-align: center; }
+
+/* Center the contact subtitle text */
+.contact .section-subtitle { 
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-bottom: 2.5rem;
+}
+
+/* "Actively Seeking" status chip */
+.contact-status-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: var(--button-background);
+    border-radius: 10rem;
+    padding: 0.6rem 1.4rem;
+    margin-bottom: 4rem;
+}
+
+/* Status chip text styling */
+.contact-status-chip span {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--text-color);
+    letter-spacing: 0.04rem;
+}
+
+/* Status chip icon styling */
+.contact-status-icon {
+    font-size: 1.3rem;
+    color: var(--text-color);
+}
+
+/* Three-column grid for the contact link cards */
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    max-width: 80rem;
+    margin: 0 auto;              
+}
+
+/* Individual contact card (Email, LinkedIn, GitHub) */
+.contact-card {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 1.2rem;
+    padding: 3rem 2.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    text-align: left;
+}
+
+/* Lift and change colour of card on hover */
+.contact-card:hover {
+    background: rgba(var(--accent-rgb), 0.1);
+    transform: translateY(-3px);
+}
+
+/* Contact card icon styling */
+.contact-card-icon {
+    font-size: 2.3rem;
+    color: var(--text-color);
+    opacity: 0.75;
+    transition: opacity 0.3s ease;
+}
+
+/* Fully opaque icon on hover */
+.contact-card:hover .contact-card-icon { opacity: 1; }
+
+/* "Email", "LinkedIn", "GitHub" label styling */
+.contact-card-label {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Actual contact value text (email address, handle) */
+.contact-card-value {
+    font-size: 1.45rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+/* Changes colour of text on hover */
+.contact-card:hover .contact-card-value { color: var(--text-color); }
+
+/*-------------------------------------FOOTER-----------------------------------*/
+/* Footer container layout */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;  
+    padding: 1rem 9% 1.4rem;
+    background: var(--background-color);
+    gap: 0;
+}
+
+/* Row holding the social icons and back-to-top button */
+.footer-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;         
+    margin-bottom: 0.8rem;
+}
+
+/* Row layout for footer social icons */
+.social-media-contacts-footer {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+/* Individual footer social icon styling */
+.social-media-contacts-footer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.6rem; height: 3rem;
+    font-size: 1.8rem;
+    color: var(--text-muted);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Lift and change colour of icon on hover */
+.social-media-contacts-footer a:hover {
+    color: var(--text-color);
+    transform: translateY(-2px);
+}
+
+/* Back-to-top button, pinned to the right */
+.footer-icon-up {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 2rem;
+    margin: auto 0;
+    height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Lift and change colour of icon on hover */
+.footer-icon-up:hover { 
+    color: var(--text-color); 
+    transform: translateY(-3px); 
+}
+
+/* Back-to-top arrow icon size */
+.footer-icon-up i { font-size: 2rem; }
+
+/* Centers the copyright line */
+.footer-copyright { text-align: center; }
+
+/* Copyright text styling */
+.footer-copyright p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    opacity: 0.5;
+    margin: 0;
+    letter-spacing: 0.04rem;
+}
+
+/*----------------------------------MEDIA QUERIES-------------------------------*/
+/* Shrink base font size on smaller desktop/laptop screens */
+@media (max-width: 1200px) { 
+    html { font-size: 55%; } 
+    .projects-container { grid-template-columns: 1fr; } /* Column count only — flips to 1 column immediately below full desktop width. Reveal/hover-expand keeps working here. */
+}
+
+/* Tablet breakpoint: tighter padding, cards stack to single column */
+@media (max-width: 991px) {
+    .header { padding: 2rem 3%; }               
+    section { padding: 12rem 3% 6rem; }          
+    .skills { padding: 9rem 3%; }                
+    .experience { padding: 12rem 3% 8rem; }
+    .leadership { padding: 12rem 3% 8rem; }
+    .contact { padding: 12rem 3% 8rem; }
+    .footer { padding: 1.4rem 3% 1.4rem; } 
+    .skills-cards { grid-template-columns: 1fr; }        
+    .leadership-container { grid-template-columns: 1fr; } 
+    .contact-cards { grid-template-columns: 1fr; }        
+    .projects__modal-content { padding: 3rem; }           
+    .experience__modal-content { padding: 3rem; }
+    .experience-stats { grid-template-columns: 1fr; }     
+    .scroll-indicator { right: 3%; }              
+}
+
+/* Mobile breakpoint: hamburger navigation menu and resized hero/modals */
+@media (max-width: 768px) {
+    .header { justify-content: space-between; }   
+    #menu-icon { 
+        display: block; 
+        cursor: pointer;
+    }               
+    .nav-bar {
+        position: absolute;
+        top: 100%; left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: rgba(23, 22, 25, 0.95);
+        backdrop-filter: blur(12px);
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        display: none;
+    }
+    .nav-bar.active { display: block; }           
+    .nav-bar a { 
+        display: block; 
+        margin: 2.5rem 0; 
+        font-size: 1.5rem; 
+    } 
+    .home { 
+        min-height: auto; 
+        padding-top: 14rem; 
+    }   
+    .home-content h1 { 
+        font-size: 5.8rem; 
+        letter-spacing: -0.15rem; 
+    } 
+    .scroll-indicator { 
+        right: 3%; 
+        bottom: 3rem; 
+        width: 4.8rem; 
+        height: 4.8rem; 
+    } 
+    .scroll-indicator-icon { font-size: 1.7rem; }
+    .footer { padding: 1rem 3% 1rem; }       
+    .experience-header { 
+        flex-direction: column; 
+        align-items: flex-start; 
+    }  
+    .projects__modal-content { 
+        padding: 2.5rem 2rem; 
+        border-radius: 0.8rem; 
+    }  
+    .experience__modal-content { 
+        padding: 2.5rem 2rem; 
+        border-radius: 0.8rem; 
+    }
+    .doc-title { font-size: 2.1rem; }             
+    .doc-topbar { 
+        flex-wrap: wrap; 
+        align-items: flex-start; 
+    }  
+}
+
+/* Reveal on/off — only small phones and touch devices that can't reliably hover lose the hover-expand feature, fully-shown cards instead */
+@media (max-width: 600px), (hover: none) {
+    .projects-slot { overflow: visible; }
+    .projects-box { 
+        position: relative !important; 
+        width: 100% !important; 
+    }
+    .project-hover-hint { display: none; }                
+    .project-detail {
+        opacity: 1 !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    .project-footer {
+        opacity: 1 !important;
+        max-height: none !important;
+        overflow: visible !important;
+        padding-top: 0.8rem !important;
+    }
+}
+
+/* Shrink hero name further on small phones */
+@media (max-width: 617px) {
+    .home-content h1 { 
+        font-size: 4.6rem; 
+        letter-spacing: -0.1rem; 
+    }
+}
+
+/* Smallest phones: further shrink hero text and stack skill cards */
+@media (max-width: 480px) {
+    .home-content h1 { 
+        font-size: 3.8rem; 
+        letter-spacing: -0.05rem; 
+    }  
+    .skills-cards { grid-template-columns: 1fr; }    
+    .doc-title { font-size: 2rem; }                  
+}
