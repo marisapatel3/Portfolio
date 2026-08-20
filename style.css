@@ -1275,9 +1275,18 @@ section.home {
 @media (max-width: 991px) {
     .header { padding: 2rem 3%; }               
     section { padding: 12rem 3% 6rem; }          
-    .skills { padding: 9rem 3%; }                
-    .experience { padding: 12rem 3% 8rem; }
-    .leadership { padding: 12rem 3% 8rem; }
+    .skills { 
+        min-height: auto;
+        padding: 9rem 3%; 
+    }                
+    .experience { 
+        min-height: auto;
+        padding: 12rem 3% 8rem; 
+    }
+    .leadership { 
+        min-height: auto;
+        padding: 12rem 3% 8rem; 
+    }
     .contact { padding: 12rem 3% 8rem; }
     .footer { padding: 1.4rem 3% 1.4rem; } 
     .skills-cards { grid-template-columns: 1fr; }        
