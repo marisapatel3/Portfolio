@@ -1,12 +1,8 @@
 # Marisa Patel — Engineering Portfolio
 
-A personal engineering portfolio showcasing my professional experience, technical projects, engineering skills, and leadership experience.
+A personal portfolio documenting my engineering work, experience, and development throughout my career, from projects to professional work.
 
 **Live Portfolio:** [marisapatel3.github.io](https://marisapatel3.github.io/Portfolio/)
-
-## About
-
-This portfolio presents my background as an Electrical Engineering graduate from McMaster University, including professional industry experience, engineering projects, technical skills, and leadership involvement.
 
 ## Technologies Used
 
@@ -16,17 +12,38 @@ This portfolio presents my background as an Electrical Engineering graduate from
 
 ## Website Sections
 
-- **Home** — Introduction and links to my email, LinkedIn, and GitHub.
-- **Projects** — Engineering projects spanning embedded systems, automation, robotics, hardware prototyping, CAD, assistive technology, and electrical design. Each project includes an overview, engineering approach, outcome, technologies used, and GitHub repository where available.
-- **Experience** — Professional work experience, including my co-op experience at Toronto Hydro, with details on responsibilities, contributions, and engineering experience gained.
-- **Technical Skills** — Technical skills organized into CAD, engineering tools, programming languages, and hardware.
-- **Leadership** — Technical and extracurricular involvement through organizations including McMaster GDSC and McMaster IEEE.
-- **Contact** — Email, LinkedIn, and GitHub contact links.
+### Home
+
+Introduction to my engineering background, areas of interest, and current career focus, with links to my professional profiles.
+
+### Projects
+
+Showcases selected engineering projects spanning CAD, electrical design, embedded systems, automation, robotics, hardware prototyping, and assistive technology.
+
+### Experience
+
+Highlights professional work experience, with details on responsibilities, contributions, and engineering experience.
+
+### Technical Skills
+
+Organizes technical skills into four categories:
+
+- CAD
+- Engineering Tools
+- Languages
+- Hardware
+
+### Leadership
+
+Highlights involvement in engineering and technology organizations, including leadership, event coordination, technical workshops, teamwork, and community involvement.
+
+### Contact
+
+Provides professional contact and networking links through email, LinkedIn, and GitHub.
 
 ## Website Structure
 
 The portfolio is organized as a single-page website with navigation links that scroll to each main section.
-
 ```text
 /
 ├── index.html
