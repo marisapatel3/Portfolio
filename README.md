@@ -1,5 +1,5 @@
 # Marisa Patel — Engineering Portfolio
-`Python` `OpenCV`
+
 A personal portfolio documenting my engineering work, experience, and development throughout my career, from engineering projects to professional work.
 
 **Live Portfolio:** [marisapatel3.github.io](https://marisapatel3.github.io/Portfolio/)
