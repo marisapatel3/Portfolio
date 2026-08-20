@@ -1269,12 +1269,6 @@ section.home {
 @media (max-width: 1200px) { 
     html { font-size: 55%; } 
     .projects-container { grid-template-columns: 1fr; } /* Column count only — flips to 1 column immediately below full desktop width. Reveal/hover-expand keeps working here. */
-}
-
-/* Tablet breakpoint: tighter padding, cards stack to single column */
-@media (max-width: 991px) {
-    .header { padding: 2rem 3%; }               
-    section { padding: 12rem 3% 6rem; }          
     .skills { 
         min-height: auto;
         padding: 9rem 3%; 
@@ -1287,7 +1281,16 @@ section.home {
         min-height: auto;
         padding: 12rem 3% 8rem; 
     }
-    .contact { padding: 12rem 3% 8rem; }
+    .contact { 
+        min-height: auto;
+        padding: 12rem 3% 8rem; 
+    }
+}
+
+/* Tablet breakpoint: tighter padding, cards stack to single column */
+@media (max-width: 991px) {
+    .header { padding: 2rem 3%; }               
+    section { padding: 12rem 3% 6rem; }          
     .footer { padding: 1.4rem 3% 1.4rem; } 
     .skills-cards { grid-template-columns: 1fr; }        
     .leadership-container { grid-template-columns: 1fr; } 
